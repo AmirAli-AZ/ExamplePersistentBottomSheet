@@ -23,7 +23,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:scaleType="fitXY"
-                android:src="@drawable/ic_line"/>
+                android:src="@drawable/ic_light_line"/>
 
         <com.google.android.material.tabs.TabLayout
                 android:id="@+id/tabLayout"

@@ -8,6 +8,6 @@
     <color name="dark_gray">#212121</color>
     <color name="white">#FFFFFFFF</color>
 
-    <!-- background color for day mode -->
-    <color name="bgColor">@color/white</color>
+    <!-- background color for night mode -->
+    <color name="bgColor">@color/dark_gray</color>
 </resources>

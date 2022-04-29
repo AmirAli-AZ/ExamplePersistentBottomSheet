@@ -1,10 +1,13 @@
 package com.amirali.examplepersistentbottomsheet
 
+import android.content.res.Configuration
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatDelegate
 import com.amirali.examplepersistentbottomsheet.databinding.ActivityMainBinding
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetBehavior.BottomSheetCallback
@@ -34,6 +37,13 @@ class MainActivity : AppCompatActivity() {
         TabLayoutMediator(binding.tabLayout , binding.viewPager) { item, position ->
             item.text = list[position]
         }.attach()
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+            if ((resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES)
+                binding.imgLine.setImageResource(R.drawable.ic_dark_line)
+            else
+                binding.imgLine.setColorFilter(R.drawable.ic_light_line)
+        }
     }
 
     private val bottomSheetCallBack = object: BottomSheetCallback() {
